@@ -7,3 +7,10 @@ edition = "2018"
 
 [dependencies]
 rltk={git="https://github.com/amethyst/bracket-lib.git"}
+specs={git="https://github.com/amethyst/specs.git"}
+specs-derive={git="https://github.com/amethyst/specs.git", package="specs-derive"}
+
+[profile.release]
+lto = true
+strip = true
+panic = 'abort'
