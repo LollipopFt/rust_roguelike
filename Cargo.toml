@@ -14,3 +14,8 @@ specs-derive={git="https://github.com/amethyst/specs.git", package="specs-derive
 lto = true
 strip = true
 panic = 'abort'
+
+[profile.dev]
+lto = 'thin'
+strip = true
+panic = 'abort'
