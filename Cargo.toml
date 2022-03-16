@@ -5,10 +5,13 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
-rltk={git="https://github.com/amethyst/bracket-lib.git"}
-specs={git="https://github.com/amethyst/specs.git"}
-specs-derive={git="https://github.com/amethyst/specs.git", package="specs-derive"}
+[dependencies.rltk]
+git="https://github.com/amethyst/bracket-lib.git"
+[dependencies.specs]
+git="https://github.com/amethyst/specs.git"
+[dependencies.specs-derive]
+git="https://github.com/amethyst/specs.git"
+package="specs-derive"
 
 [profile.release]
 lto = true
@@ -19,3 +22,6 @@ panic = 'abort'
 lto = 'thin'
 strip = true
 panic = 'abort'
+
+[target.wasm32-unknown-unknown]
+runner = 'wasm-server-runner'
